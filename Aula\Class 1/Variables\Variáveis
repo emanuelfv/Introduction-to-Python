@@ -1,0 +1,35 @@
+'''
+Variáveis são espaços vazios na memória que são prenchidos assim que atribuimos um valor. Ficou difícil?
+imagine que temos uma caixa de papelão, ela está vazia e sem nada que à identifique, 
+se escrevermos "Brinquedos" nessa caixa estaremos dando um nome a ela, agora ela não será mais uma caixa 
+qualquer, ela será uma caixa que vai guardar brinquedos.
+Prosseguindo, agora que sabemos o que temos que colocar nela, vamos colocar, para isso vamos pôr um 
+ursinho de pelúcia nela, e assim vamos preencher todo o interior da caixa, em resumo estamos atribuindo 
+um valor a ela, esse valor será Ursinho de pelúcia. Agora se quisermos mostrar o que tem dentro dessa caixa,
+nós vamos abri-la, ao abrir nós vamos ver que dentro dela há um "Ursinho de pelúcia".
+'''
+#Em código diriamos
+#Nossa caixa:
+Brinquedos = "Ursinho de pelúcia" (Funciona com àspas simples e duplas)
+
+#E se quisermos mostrar o que possui dentro dessa caixa/variável, vamos usar o comando:
+print(Brinquedos)
+#Mostrar(O que está escrito dentro dele)
+
+#DECLARAÇÃO DE VARIÁVEIS
+#DECLARING VARIABLES
+
+#WE HAVE 4 PRIMARY TYPES OF VARIABLES
+#NÓS TEMOS 4 TIPOS PRIMÁRIOS DE VARIÁVEIS
+
+#Variáveis de números
+#Number variables
+INTEIRO = int
+REAL = float
+
+#Variáveis de texto
+TEXTO = str #String
+
+#Variáveis de verdadeiro ou falso, que chamamos de Booleanas
+#Boolean Variables
+BOOLEANAS = True

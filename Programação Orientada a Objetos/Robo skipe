@@ -1,0 +1,36 @@
+import runloop, motor_pair, motor, port
+
+class Robo:
+    async def __init__(self):
+        self.velocidade = 0
+
+    async def ParDeMotores(self, motor1, motor2):
+        motor_pair.pair(motor_pair.PAIR_1, motor1, motor2)
+
+    async def Velocidade(self, velocidade: int):
+        self.velocidade = velocidade
+    
+    async def Rotacionar(self, lado:str):
+        if(lado == "esquerda"): #90 graus para esquerda
+            motor_pair.move_tank_for_time(motor_pair.PAIR_1, 1 * self.velocidade, 0, 670)
+        elif(lado == "direita"): #90 graus para direita
+            motor_pair.move_tank_for_time(motor_pair.PAIR_1, 0, 1 * self.velocidade, 670)
+
+    async def Mover(self, direcao:str, tempo:int):
+        if(direcao == "frente"): #para frente
+            motor_pair.move_tank_for_time(motor_pair.PAIR_1, 1 * self.velocidade, 1 * self.velocidade, tempo)
+        elif(direcao == "tras"): #para tras
+            motor_pair.move_tank_for_time(motor_pair.PAIR_1, -1 * self.velocidade, -1 * self.velocidade, tempo)
+
+        
+spike = Robo() #Simplifica tudo
+async def Main():
+    await spike.ParDeMotores(port.A, port.B) #Definir par de motores
+    await spike.Velocidade(100) #Definir velocidade dos motores
+    await spike.Rotacionar('direita') #Robô ir para direita
+    await runloop.sleep_ms(1000) #Robô esperar 1 segundo
+    await spike.Mover('frente', 1000) #Robô andar para frente 1 segundo
+    await runloop.sleep_ms(1000)
+    await spike.Rotacionar('esquerda')
+
+runloop.run(Main())
